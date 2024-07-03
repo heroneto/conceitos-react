@@ -1,21 +1,26 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
+import { useEffect, useState } from 'react'
 import './App.css'
-import { Counter } from './components/Counter'
-import { Header } from './components/Header'
-import { NumberList } from './components/NumberList'
+
 
 function App() {
+  const [counter, setCounter] = useState(0)
 
-  const numeros = [1, 2, 3, 4, 5]
+  useEffect(() => {
+    console.log("Valor do counter ", counter)
+  }, [])
+
+
+
+
+
 
   return (
     <div>
-      <Header />
-      <Counter />
+      App
 
-      <NumberList numbers={numeros} />
+      <button onClick={() => setCounter(counter + 1)}>
+        count is {counter}
+      </button>
     </div>
   )
 }
